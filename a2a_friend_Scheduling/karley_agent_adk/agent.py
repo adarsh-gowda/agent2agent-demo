@@ -1,5 +1,6 @@
 import random
 from datetime import date, datetime, timedelta
+from google.adk.models.google_llm import GoogleLLMVariant  
 
 from google.adk.agents import LlmAgent
 

@@ -4,7 +4,7 @@ from typing import Dict
 # In-memory database for court schedules, mapping date to a dictionary of time slots and party names
 COURT_SCHEDULE: Dict[str, Dict[str, str]] = {}
 
-
+    
 def generate_court_schedule():
     """Generates a schedule for the pickleball court for the next 7 days."""
     global COURT_SCHEDULE

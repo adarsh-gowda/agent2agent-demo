@@ -53,8 +53,8 @@ class KarleyAgentExecutor(AgentExecutor):
                     event.content.parts if event.content and event.content.parts else []
                 )
                 logger.debug("Yielding final response: %s", parts)
-                task_updater.add_artifact(parts)
-                task_updater.complete()
+                await task_updater.add_artifact(parts)
+                await task_updater.complete()
                 break
             if not event.get_function_calls():
                 logger.debug("Yielding update response")

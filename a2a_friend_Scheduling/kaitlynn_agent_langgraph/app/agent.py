@@ -133,7 +133,7 @@ class KaitlynAgent:
         config: RunnableConfig = {"configurable": {"thread_id": context_id}}
         today_str = f"Today's date is {date.today().strftime('%Y-%m-%d')}."
         augmented_query = f"{today_str}\n\nUser query: {query}"
-        self.graph.invoke({"messages": [("user", augmented_query)]}, config)
+        result = self.graph.invoke({"messages": [("user", augmented_query)]}, config)
         return self.get_agent_response(config)
 
     async def stream(self, query, context_id) -> AsyncIterable[dict[str, Any]]:
